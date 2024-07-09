@@ -2,7 +2,7 @@ version: "3"
 services: 
   oci:
     image: yin26287903/java_oci_manage
-    container_name: rrr
+    container_name: java_oci_manage
     tty: true
     ports:
       - 9527:9527
