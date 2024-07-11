@@ -1,7 +1,7 @@
 FROM openjdk:20-ea-11-jdk-slim-bullseye
 LABEL maintainer="VAY1314 <blog@vay1314.top>"
 
-RUN apt-get update && apt-get install -y wget procps curl jq
+RUN apt-get update && apt-get install -y wget procps curl jq openjdk-17-jdk
 
 WORKDIR /app
 
