@@ -13,4 +13,4 @@ RUN VERSION=$(curl -s https://api.github.com/repos/semicons/java_oci_manage/rele
   && rm -rf gz_client_bot.tar.gz \
   && chmod +x sh_client_bot.sh
   
-ENTRYPOINT ["/bin/sh", "-c", "sh /app/sh_client_bot.sh > /proc/1/fd/1 2>/proc/1/fd/2"]
+# ENTRYPOINT ["/bin/sh", "-c", "sh /app/sh_client_bot.sh > /proc/1/fd/1 2>/proc/1/fd/2"]
