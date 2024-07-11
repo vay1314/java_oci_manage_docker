@@ -1,4 +1,4 @@
-FROM openjdk:17-ea-jdk-slim
+FROM openjdk:20-ea-jdk-slim
 LABEL maintainer="VAY1314 <blog@vay1314.top>"
 
 RUN apt-get update && apt-get install -y wget procps curl jq openjdk-17-jdk
