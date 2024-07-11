@@ -6,14 +6,7 @@ user=ocid1.user.oc1..aaaaaaaaxxxxgwlg3xuzwgsaazxtzbozqq
 fingerprint=b8:33:6f:xxxx:45:43:33
 tenancy=ocid1.tenancy.oc1..aaaaaaaaxxx7x7h4ya
 region=ap-singapore-1
-key_file=写你的API密钥文件路径
-
-[DEFAULT2]
-user=ocid1.user.oc1..aaaaaaaaxxxxgwlg3xuzwgsaazxtzbozqq
-fingerprint=b8:33:6f:xxxx:45:43:33
-tenancy=ocid1.tenancy.oc1..aaaaaaaaxxx7x7h4ya
-region=ap-singapore-1
-key_file=写你的API密钥文件路径
+key_file=/app/key.pem
 
 oci=end
 
@@ -40,15 +33,3 @@ local_url_name=
 
 #非必填 启动模式 填写local为启动本地无公网IP模式(只要能联网即可) 不填或填其他 则启动端口模式
 model=
-
-
-
-#在azure=begin和azure=end之间放入你的azure的API配置信息 支持多个配置文件 机器人切换profile可更换操作配置 上传配置支持使用原格式({"appId":"xxx","password":"xxx"...})上传 
-azure=begin
-
-[az001]
-appId=551xxxx7-xxxx-xxxx-xxxx-b9xxxx60cc65
-password=T618Q~.LIy_xxxxx~jm~xxxxxx
-tenant=xxxx3713-xxxx-4cb5-xxxx-3001060xxxxx
-
-azure=end
