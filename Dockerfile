@@ -1,7 +1,10 @@
 FROM openjdk:17.0.2-jdk-slim
 LABEL maintainer="VAY1314 <blog@vay1314.top>"
 
-RUN apt-get update && apt-get install -y wget procps curl jq
+RUN apt-get update && apt-get install -y wget procps curl jq tzdata
+
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /app
 
