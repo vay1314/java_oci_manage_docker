@@ -25,6 +25,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Get Dockerfile VERSION
+        run: |
+          export VERSION=$(curl -s https://api.github.com/repos/semicons/java_oci_manage/releases/latest | jq -r .tag_name | sed 's/v//')
+          echo "##[set-output name=version]${VERSION}"
+        id: get_version
+
       - name: 构建并推送到 Dockerhub 镜像仓库
         uses: docker/build-push-action@v2
         with:
@@ -33,4 +39,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            yin26287903/java_oci_manage_docker
+            yin26287903/java_oci_manage_docker:${{ steps.get_version.outputs.version }}
