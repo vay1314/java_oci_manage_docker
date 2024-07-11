@@ -1,13 +1,13 @@
-FROM openjdk:20-ea-jdk-slim
+FROM openjdk:17-ea-jdk-slim
 LABEL maintainer="VAY1314 <blog@vay1314.top>"
 
 RUN apt-get update && apt-get install -y wget procps curl jq
 
 WORKDIR /app
 
-RUN apt-get remove -y openjdk-* \
-    && apt-get update \
-    && apt-get install -y openjdk-17-jdk
+#RUN apt-get remove -y openjdk-* \
+#    && apt-get update \
+#    && apt-get install -y openjdk-17-jdk
 
 RUN VERSION=$(curl -s https://api.github.com/repos/semicons/java_oci_manage/releases/latest | jq -r .tag_name | sed 's/v//') \
   && echo "最新版本: $VERSION" \
