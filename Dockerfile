@@ -5,10 +5,6 @@ RUN apt-get update && apt-get install -y wget procps curl jq
 
 WORKDIR /app
 
-#RUN apt-get remove -y openjdk-* \
-#    && apt-get update \
-#    && apt-get install -y openjdk-17-jdk
-
 RUN VERSION=$(curl -s https://api.github.com/repos/semicons/java_oci_manage/releases/latest | jq -r .tag_name | sed 's/v//') \
   && echo "最新版本: $VERSION" \
   && wget -O gz_client_bot.tar.gz https://github.com/semicons/java_oci_manage/releases/download/v${VERSION}/gz_client_bot.tar.gz \
@@ -17,4 +13,4 @@ RUN VERSION=$(curl -s https://api.github.com/repos/semicons/java_oci_manage/rele
   && rm -rf gz_client_bot.tar.gz \
   && chmod +x sh_client_bot.sh
 
-# ENTRYPOINT ["/bin/sh", "-c", "sh /app/sh_client_bot.sh > /proc/1/fd/1 2>/proc/1/fd/2"]
+ENTRYPOINT ["/bin/sh", "-c", "sh /app/sh_client_bot.sh > /proc/1/fd/1 2>/proc/1/fd/2"]
