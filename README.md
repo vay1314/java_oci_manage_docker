@@ -29,7 +29,7 @@ docker run -d --name java_oci_manage_docker --restart always \
 
 ## docker compose 部署
 
-参考完成上述配置后,下载 [docker-compose.yml](https://raw.githubusercontent.com/stilleshan/dockerfiles/main/java_oci_manage/docker-compose.yml) 执行以下命令启动:
+参考完成上述配置后,下载 [docker-compose.yml](https://raw.githubusercontent.com/vay1314/java_oci_manage_docker/main/docker-compose.yml) 执行以下命令启动:
 
 ```
 docker-compose up -d
