@@ -24,7 +24,7 @@ docker run -d --name java_oci_manage_docker --restart always \
   -v /root/config/client_config:/app/client_config \
   -v /root/config/key.pem:/app/key.pem \
   -p 9527:9527 \
-  yin6287903/java_oci_manage
+  yin26287903/java_oci_manage_docker
 ```
 
 ## docker compose 部署
