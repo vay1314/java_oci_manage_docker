@@ -1,8 +1,8 @@
 version: "3"
 services: 
   oci:
-    image: yin26287903/java_oci_manage
-    container_name: java_oci_manage
+    image: yin26287903/java_oci_manage_docker
+    container_name: java_oci_manage_docker
     tty: true
     ports:
       - 9527:9527
