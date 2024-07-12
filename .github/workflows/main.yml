@@ -40,3 +40,4 @@ jobs:
           push: true
           tags: |
             yin26287903/java_oci_manage_docker:${{ steps.get_version.outputs.version }}
+            yin26287903/java_oci_manage_docker:latest
