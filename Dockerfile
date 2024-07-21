@@ -9,7 +9,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 WORKDIR /app
 
 RUN VERSION=$(curl -s https://api.github.com/repos/semicons/java_oci_manage/releases/latest | jq -r .tag_name | sed 's/v//') \
-  && echo "最新版本: $VERSION" \
+  && echo "当前版本: $VERSION" \
   && wget -O gz_client_bot.tar.gz https://github.com/semicons/java_oci_manage/releases/download/v${VERSION}/gz_client_bot.tar.gz \
   && tar -zxvf gz_client_bot.tar.gz --exclude=client_config \
   && tar -zxvf gz_client_bot.tar.gz --skip-old-files client_config \
