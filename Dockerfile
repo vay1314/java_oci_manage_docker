@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM openjdk:17.0.2-jdk-slim
 LABEL maintainer="VAY1314 <blog@vay1314.top>"
 
 RUN apt-get update && apt-get install -y wget procps curl jq tzdata
