@@ -10,8 +10,7 @@ WORKDIR /app
 
 ARG TARGETARCH
 
-RUN set -eux; \
-  VERSION=$(curl -s https://api.github.com/repos/semicons/java_oci_manage/releases/latest | jq -r .tag_name | sed 's/v//') \
+RUN VERSION=$(curl -s https://api.github.com/repos/semicons/java_oci_manage/releases/latest | jq -r .tag_name | sed 's/v//') \
   && echo "当前版本: $VERSION" \
   && if [ "$TARGETARCH" = "amd64" ]; then \
        wget -O gz_client_bot.tar.gz https://github.com/semicons/java_oci_manage/releases/latest/download/gz_client_bot_x86_compatible.tar.gz \
