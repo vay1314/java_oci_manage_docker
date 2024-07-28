@@ -13,9 +13,9 @@ ARG TARGETARCH
 RUN VERSION=$(curl -s https://api.github.com/repos/semicons/java_oci_manage/releases/latest | jq -r .tag_name | sed 's/v//') \
   && echo "当前版本: $VERSION" \
   && if [ "$TARGETARCH" = "amd64" ]; then \
-       wget -O gz_client_bot.tar.gz https://github.com/semicons/java_oci_manage/releases/latest/download/gz_client_bot_x86_compatible.tar.gz \
+       wget -O gz_client_bot.tar.gz https://github.com/semicons/java_oci_manage/releases/latest/download/gz_client_bot_x86_compatible.tar.gz; \
      else \
-       wget -O gz_client_bot.tar.gz https://github.com/semicons/java_oci_manage/releases/latest/download/gz_client_bot_aarch.tar.gz \
+       wget -O gz_client_bot.tar.gz https://github.com/semicons/java_oci_manage/releases/latest/download/gz_client_bot_aarch.tar.gz; \
      fi \
   && tar -zxvf gz_client_bot.tar.gz --exclude=client_config \
   && tar -zxvf gz_client_bot.tar.gz --skip-old-files client_config \
