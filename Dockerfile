@@ -11,18 +11,25 @@ WORKDIR /app
 ARG TARGETARCH
 
 RUN set -eux; \
-  VERSION=$(curl -s https://api.github.com/repos/semicons/java_oci_manage/releases/latest | jq -r .tag_name | sed 's/v//') \
-  && echo "当前版本: $VERSION" \
-  && if [ "$TARGETARCH" = "amd64" ]; then \
-       wget -O gz_client_bot.tar.gz https://github.com/semicons/java_oci_manage/releases/latest/download/gz_client_bot_x86_compatible.tar.gz \
-     else \
-       wget -O gz_client_bot.tar.gz https://github.com/semicons/java_oci_manage/releases/latest/download/gz_client_bot_aarch.tar.gz \
-     fi \
-  && tar -zxvf gz_client_bot.tar.gz --exclude=client_config \
-  && tar -zxvf gz_client_bot.tar.gz --skip-old-files client_config \
-  && rm -rf gz_client_bot.tar.gz \
-  && touch log_r_client.log \
-  && chmod +x r_client \
-  && chmod +x sh_client_bot.sh
+    VERSION=$(curl -s https://api.github.com/repos/semicons/java_oci_manage/releases/latest | jq -r .tag_name | sed 's/v//'); \
+    echo "当前版本: $VERSION"; \
+    if [ "$TARGETARCH" = "amd64" ]; then \
+        DOWNLOAD_URL="https://github.com/semicons/java_oci_manage/releases/latest/download/gz_client_bot_x86_compatible.tar.gz"; \
+    else \
+        DOWNLOAD_URL="https://github.com/semicons/java_oci_manage/releases/latest/download/gz_client_bot_aarch.tar.gz"; \
+    fi; \
+    echo "下载链接: $DOWNLOAD_URL"; \
+    wget -O gz_client_bot.tar.gz $DOWNLOAD_URL; \
+    echo "下载完成"; \
+    tar -zxvf gz_client_bot.tar.gz --exclude=client_config; \
+    echo "解压完成: 排除 client_config"; \
+    tar -zxvf gz_client_bot.tar.gz --skip-old-files client_config; \
+    echo "解压完成: 保留旧文件 client_config"; \
+    rm -rf gz_client_bot.tar.gz; \
+    echo "删除压缩包"; \
+    touch log_r_client.log; \
+    chmod +x r_client; \
+    chmod +x sh_client_bot.sh; \
+    echo "设置权限完成"
 
 ENTRYPOINT ["/bin/bash", "-c", "bash /app/sh_client_bot.sh > /proc/1/fd/1 2>/proc/1/fd/2"]
