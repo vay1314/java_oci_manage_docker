@@ -30,7 +30,6 @@ jobs:
         run: |
           VERSION=$(curl -s https://api.github.com/repos/semicons/java_oci_manage/releases/latest | jq -r .tag_name | sed 's/v//')
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
-          echo -e "\033[0;32m当前版本: $VERSION\033[0m"
         id: get_version
 
       - name: Check if Docker image exists
