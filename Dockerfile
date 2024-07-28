@@ -20,6 +20,7 @@ RUN VERSION=$(curl -s https://api.github.com/repos/semicons/java_oci_manage/rele
   && tar -zxvf gz_client_bot.tar.gz --exclude=client_config \
   && tar -zxvf gz_client_bot.tar.gz --skip-old-files client_config \
   && rm -rf gz_client_bot.tar.gz \
+  && touch log_r_client.log \
   && chmod +x r_client \
   && chmod +x sh_client_bot.sh
 
