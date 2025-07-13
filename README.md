@@ -8,6 +8,9 @@
 基于 [semicons/java_oci_manage](https://github.com/semicons/java_oci_manage) 项目的 docker 镜像.
 本项目仅为方便 docker 容器化部署,相关使用教程及问题请参考官方项目.
 
+**Docker 镜像地址**：
+ 👉 https://hub.docker.com/r/yin26287903/java_oci_manage_docker
+
 ## docker 部署
 
 ### 准备配置文件
