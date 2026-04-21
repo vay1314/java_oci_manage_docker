@@ -29,6 +29,14 @@ docker run -d --name java_oci_manage_docker --restart always \
   yin26287903/java_oci_manage_docker
 ```
 
+### 使用说明
+
+- 启动后通过浏览器访问：`https://你的IP:9527`
+- 使用 `username / password` 登录，或使用 Telegram 验证码登录
+- 默认端口为 `9527`，可通过启动参数修改
+- 确保端口已开放，可使用端口测试工具检查
+- 本地模式（`model=local`）无需开端口，仅通过 Telegram 机器人操作
+
 ## docker compose 部署
 
 参考完成上述配置后,下载 [docker-compose.yml](https://raw.githubusercontent.com/vay1314/java_oci_manage_docker/main/docker-compose.yml) 执行以下命令启动:
