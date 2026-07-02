@@ -1,4 +1,4 @@
-# java_oci_manage_docker
+# java_oci_manage_docker [![GitHub Repo stars](https://img.shields.io/badge/dynamic/json?url=https://api.github.com/repos/vay1314/java_oci_manage_docker&query=%24.stargazers_count&label=stars&logo=github)](https://github.com/vay1314/java_oci_manage_docker/stargazers) [![Docker Image Version](https://img.shields.io/docker/v/yin26287903/java_oci_manage_docker/latest?label=最新构建)](https://hub.docker.com/r/yin26287903/java_oci_manage_docker)
  R探长Bot docker版
 
 
